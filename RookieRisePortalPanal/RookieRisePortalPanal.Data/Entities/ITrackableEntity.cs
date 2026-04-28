@@ -16,7 +16,7 @@ namespace RookieRisePortalPanal.Data.Entities
         public Guid? UpdatedBy { get; set; }
 
 
-        public bool IsDeleted { get; set; }// soft delete
+        public bool IsDeleted { get; set; }
         public DateTime? DeletedAt { get; set; }
         public Guid? DeletedBy { get; set; }
     }

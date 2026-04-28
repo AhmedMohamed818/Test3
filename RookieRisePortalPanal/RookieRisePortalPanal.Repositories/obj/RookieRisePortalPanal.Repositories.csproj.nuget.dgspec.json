@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\LOL\\source\\repos\\RookieRisePortalPanal\\RookieRisePortalPanal.Repositories\\RookieRisePortalPanal.Repositories.csproj": {}
+    "C:\\Users\\LOL\\Desktop\\repos\\Test3\\RookieRisePortalPanal\\RookieRisePortalPanal.Repositories\\RookieRisePortalPanal.Repositories.csproj": {}
   },
   "projects": {
-    "C:\\Users\\LOL\\source\\repos\\RookieRisePortalPanal\\RookieRisePortalPanal.Data\\RookieRisePortalPanal.Data.csproj": {
+    "C:\\Users\\LOL\\Desktop\\repos\\Test3\\RookieRisePortalPanal\\RookieRisePortalPanal.Data\\RookieRisePortalPanal.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LOL\\source\\repos\\RookieRisePortalPanal\\RookieRisePortalPanal.Data\\RookieRisePortalPanal.Data.csproj",
+        "projectUniqueName": "C:\\Users\\LOL\\Desktop\\repos\\Test3\\RookieRisePortalPanal\\RookieRisePortalPanal.Data\\RookieRisePortalPanal.Data.csproj",
         "projectName": "RookieRisePortalPanal.Data",
-        "projectPath": "C:\\Users\\LOL\\source\\repos\\RookieRisePortalPanal\\RookieRisePortalPanal.Data\\RookieRisePortalPanal.Data.csproj",
+        "projectPath": "C:\\Users\\LOL\\Desktop\\repos\\Test3\\RookieRisePortalPanal\\RookieRisePortalPanal.Data\\RookieRisePortalPanal.Data.csproj",
         "packagesPath": "C:\\Users\\LOL\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LOL\\source\\repos\\RookieRisePortalPanal\\RookieRisePortalPanal.Data\\obj\\",
+        "outputPath": "C:\\Users\\LOL\\Desktop\\repos\\Test3\\RookieRisePortalPanal\\RookieRisePortalPanal.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -87,14 +87,14 @@
         }
       }
     },
-    "C:\\Users\\LOL\\source\\repos\\RookieRisePortalPanal\\RookieRisePortalPanal.Repositories\\RookieRisePortalPanal.Repositories.csproj": {
+    "C:\\Users\\LOL\\Desktop\\repos\\Test3\\RookieRisePortalPanal\\RookieRisePortalPanal.Repositories\\RookieRisePortalPanal.Repositories.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LOL\\source\\repos\\RookieRisePortalPanal\\RookieRisePortalPanal.Repositories\\RookieRisePortalPanal.Repositories.csproj",
+        "projectUniqueName": "C:\\Users\\LOL\\Desktop\\repos\\Test3\\RookieRisePortalPanal\\RookieRisePortalPanal.Repositories\\RookieRisePortalPanal.Repositories.csproj",
         "projectName": "RookieRisePortalPanal.Repositories",
-        "projectPath": "C:\\Users\\LOL\\source\\repos\\RookieRisePortalPanal\\RookieRisePortalPanal.Repositories\\RookieRisePortalPanal.Repositories.csproj",
+        "projectPath": "C:\\Users\\LOL\\Desktop\\repos\\Test3\\RookieRisePortalPanal\\RookieRisePortalPanal.Repositories\\RookieRisePortalPanal.Repositories.csproj",
         "packagesPath": "C:\\Users\\LOL\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LOL\\source\\repos\\RookieRisePortalPanal\\RookieRisePortalPanal.Repositories\\obj\\",
+        "outputPath": "C:\\Users\\LOL\\Desktop\\repos\\Test3\\RookieRisePortalPanal\\RookieRisePortalPanal.Repositories\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -116,8 +116,8 @@
             "framework": "net9.0",
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\LOL\\source\\repos\\RookieRisePortalPanal\\RookieRisePortalPanal.Data\\RookieRisePortalPanal.Data.csproj": {
-                "projectPath": "C:\\Users\\LOL\\source\\repos\\RookieRisePortalPanal\\RookieRisePortalPanal.Data\\RookieRisePortalPanal.Data.csproj"
+              "C:\\Users\\LOL\\Desktop\\repos\\Test3\\RookieRisePortalPanal\\RookieRisePortalPanal.Data\\RookieRisePortalPanal.Data.csproj": {
+                "projectPath": "C:\\Users\\LOL\\Desktop\\repos\\Test3\\RookieRisePortalPanal\\RookieRisePortalPanal.Data\\RookieRisePortalPanal.Data.csproj"
               }
             }
           }

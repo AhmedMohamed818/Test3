@@ -230,12 +230,14 @@ namespace RookieRisePortalPanal.Data.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
-                        .HasDatabaseName("EmailIndex");
+                        .IsUnique()
+                        .HasDatabaseName("EmailIndex")
+                        .HasFilter("[IsDeleted] = 0");
 
                     b.HasIndex("NormalizedUserName")
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex")
-                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+                        .HasFilter("[IsDeleted] = 0");
 
                     b.ToTable("AspNetUsers", (string)null);
                 });
@@ -262,18 +264,15 @@ namespace RookieRisePortalPanal.Data.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("LogoPath")
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NameAr")
                         .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NameEn")
                         .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -286,8 +285,7 @@ namespace RookieRisePortalPanal.Data.Migrations
 
                     b.Property<string>("WebsiteUrl")
                         .IsRequired()
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -297,13 +295,11 @@ namespace RookieRisePortalPanal.Data.Migrations
                     b.ToTable("Companies");
                 });
 
-            modelBuilder.Entity("UserToken", b =>
+            modelBuilder.Entity("RookieRisePortalPanal.Data.Entities.UserToken", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -312,14 +308,11 @@ namespace RookieRisePortalPanal.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<bool>("IsUsed")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValue(false);
+                        .HasColumnType("bit");
 
                     b.Property<string>("Token")
                         .IsRequired()
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Type")
                         .HasColumnType("int");
@@ -388,7 +381,7 @@ namespace RookieRisePortalPanal.Data.Migrations
             modelBuilder.Entity("RookieRisePortalPanal.Data.Entities.Company", b =>
                 {
                     b.HasOne("RookieRisePortalPanal.Data.Entities.AppUser", "User")
-                        .WithOne("Company")
+                        .WithOne()
                         .HasForeignKey("RookieRisePortalPanal.Data.Entities.Company", "UserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -396,18 +389,15 @@ namespace RookieRisePortalPanal.Data.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("UserToken", b =>
+            modelBuilder.Entity("RookieRisePortalPanal.Data.Entities.UserToken", b =>
                 {
-                    b.HasOne("RookieRisePortalPanal.Data.Entities.AppUser", null)
+                    b.HasOne("RookieRisePortalPanal.Data.Entities.AppUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
 
-            modelBuilder.Entity("RookieRisePortalPanal.Data.Entities.AppUser", b =>
-                {
-                    b.Navigation("Company");
+                    b.Navigation("User");
                 });
 #pragma warning restore 612, 618
         }

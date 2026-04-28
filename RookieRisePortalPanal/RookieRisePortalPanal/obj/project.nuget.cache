@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vw2ybnhCqTc=",
+  "dgSpecHash": "x57uZrKNXZA=",
   "success": true,
-  "projectFilePath": "C:\\Users\\LOL\\source\\repos\\RookieRisePortalPanal\\RookieRisePortalPanal\\RookieRisePortalPanal.csproj",
+  "projectFilePath": "C:\\Users\\LOL\\Desktop\\repos\\Test3\\RookieRisePortalPanal\\RookieRisePortalPanal\\RookieRisePortalPanal.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LOL\\.nuget\\packages\\automapper\\16.1.1\\automapper.16.1.1.nupkg.sha512",
     "C:\\Users\\LOL\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",

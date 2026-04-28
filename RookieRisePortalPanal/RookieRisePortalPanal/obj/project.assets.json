@@ -5373,11 +5373,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LOL\\source\\repos\\RookieRisePortalPanal\\RookieRisePortalPanal\\RookieRisePortalPanal.csproj",
+      "projectUniqueName": "C:\\Users\\LOL\\Desktop\\repos\\Test3\\RookieRisePortalPanal\\RookieRisePortalPanal\\RookieRisePortalPanal.csproj",
       "projectName": "RookieRisePortalPanal",
-      "projectPath": "C:\\Users\\LOL\\source\\repos\\RookieRisePortalPanal\\RookieRisePortalPanal\\RookieRisePortalPanal.csproj",
+      "projectPath": "C:\\Users\\LOL\\Desktop\\repos\\Test3\\RookieRisePortalPanal\\RookieRisePortalPanal\\RookieRisePortalPanal.csproj",
       "packagesPath": "C:\\Users\\LOL\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LOL\\source\\repos\\RookieRisePortalPanal\\RookieRisePortalPanal\\obj\\",
+      "outputPath": "C:\\Users\\LOL\\Desktop\\repos\\Test3\\RookieRisePortalPanal\\RookieRisePortalPanal\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5399,11 +5399,11 @@
           "framework": "net9.0",
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\LOL\\source\\repos\\RookieRisePortalPanal\\RookieRisePortalPanal.Repositories\\RookieRisePortalPanal.Repositories.csproj": {
-              "projectPath": "C:\\Users\\LOL\\source\\repos\\RookieRisePortalPanal\\RookieRisePortalPanal.Repositories\\RookieRisePortalPanal.Repositories.csproj"
+            "C:\\Users\\LOL\\Desktop\\repos\\Test3\\RookieRisePortalPanal\\RookieRisePortalPanal.Repositories\\RookieRisePortalPanal.Repositories.csproj": {
+              "projectPath": "C:\\Users\\LOL\\Desktop\\repos\\Test3\\RookieRisePortalPanal\\RookieRisePortalPanal.Repositories\\RookieRisePortalPanal.Repositories.csproj"
             },
-            "C:\\Users\\LOL\\source\\repos\\RookieRisePortalPanal\\RookieRisePortalPanal.Services\\RookieRisePortalPanal.Services.csproj": {
-              "projectPath": "C:\\Users\\LOL\\source\\repos\\RookieRisePortalPanal\\RookieRisePortalPanal.Services\\RookieRisePortalPanal.Services.csproj"
+            "C:\\Users\\LOL\\Desktop\\repos\\Test3\\RookieRisePortalPanal\\RookieRisePortalPanal.Services\\RookieRisePortalPanal.Services.csproj": {
+              "projectPath": "C:\\Users\\LOL\\Desktop\\repos\\Test3\\RookieRisePortalPanal\\RookieRisePortalPanal.Services\\RookieRisePortalPanal.Services.csproj"
             }
           }
         }

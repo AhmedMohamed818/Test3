@@ -43,61 +43,19 @@
         ],
         "requestBody": {
           "content": {
-            "multipart/form-data": {
+            "application/json": {
               "schema": {
-                "required": [
-                  "NameAr",
-                  "NameEn"
-                ],
-                "type": "object",
-                "properties": {
-                  "NameEn": {
-                    "type": "string"
-                  },
-                  "NameAr": {
-                    "type": "string"
-                  },
-                  "Email": {
-                    "type": "string",
-                    "format": "email"
-                  },
-                  "WebsiteUrl": {
-                    "type": "string"
-                  },
-                  "LogoName": {
-                    "type": "string"
-                  },
-                  "LogoPath": {
-                    "type": "string",
-                    "format": "binary"
-                  },
-                  "PhoneNumber": {
-                    "type": "string"
-                  }
-                }
-              },
-              "encoding": {
-                "NameEn": {
-                  "style": "form"
-                },
-                "NameAr": {
-                  "style": "form"
-                },
-                "Email": {
-                  "style": "form"
-                },
-                "WebsiteUrl": {
-                  "style": "form"
-                },
-                "LogoName": {
-                  "style": "form"
-                },
-                "LogoPath": {
-                  "style": "form"
-                },
-                "PhoneNumber": {
-                  "style": "form"
-                }
+                "$ref": "#/components/schemas/RegisterDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterDto"
               }
             }
           }
@@ -287,6 +245,49 @@
         }
       }
     },
+    "/api/Company/upload-logo": {
+      "post": {
+        "tags": [
+          "Company"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "required": [
+                  "CompanyId",
+                  "Logo"
+                ],
+                "type": "object",
+                "properties": {
+                  "CompanyId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "Logo": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "CompanyId": {
+                  "style": "form"
+                },
+                "Logo": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Company/{id}/restore": {
       "post": {
         "tags": [
@@ -306,45 +307,6 @@
         "responses": {
           "200": {
             "description": "OK"
-          }
-        }
-      }
-    },
-    "/WeatherForecast": {
-      "get": {
-        "tags": [
-          "WeatherForecast"
-        ],
-        "operationId": "GetWeatherForecast",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
-                  }
-                }
-              }
-            }
           }
         }
       }
@@ -387,14 +349,54 @@
         "additionalProperties": false
       },
       "LoginDto": {
+        "required": [
+          "email",
+          "password"
+        ],
         "type": "object",
         "properties": {
           "email": {
+            "minLength": 1,
             "type": "string",
-            "format": "email",
-            "nullable": true
+            "format": "email"
           },
           "password": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RegisterDto": {
+        "required": [
+          "email",
+          "nameAr",
+          "nameEn"
+        ],
+        "type": "object",
+        "properties": {
+          "nameEn": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "nameAr": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "email": {
+            "minLength": 1,
+            "type": "string",
+            "format": "email"
+          },
+          "websiteUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "logoName": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
             "type": "string",
             "nullable": true
           }
@@ -402,19 +404,25 @@
         "additionalProperties": false
       },
       "SetPasswordDto": {
+        "required": [
+          "email",
+          "newPassword",
+          "token"
+        ],
         "type": "object",
         "properties": {
           "email": {
+            "minLength": 1,
             "type": "string",
-            "nullable": true
+            "format": "email"
           },
           "token": {
-            "type": "string",
-            "nullable": true
+            "minLength": 1,
+            "type": "string"
           },
           "newPassword": {
-            "type": "string",
-            "nullable": true
+            "minLength": 8,
+            "type": "string"
           }
         },
         "additionalProperties": false
@@ -453,29 +461,6 @@
           "logoPath": {
             "type": "string",
             "format": "binary",
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "WeatherForecast": {
-        "type": "object",
-        "properties": {
-          "date": {
-            "type": "string",
-            "format": "date"
-          },
-          "temperatureC": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "temperatureF": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "summary": {
-            "type": "string",
             "nullable": true
           }
         },

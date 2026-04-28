@@ -50,39 +50,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "NameEn",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "NameAr",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Email",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "WebsiteUrl",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "LogoName",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "LogoPath",
-        "Type": "Microsoft.AspNetCore.Http.IFormFile",
-        "IsRequired": false
-      },
-      {
-        "Name": "PhoneNumber",
-        "Type": "System.String",
-        "IsRequired": false
+        "Name": "registerDto",
+        "Type": "RookieRisePortalPanal.Services.AccountService.DTO.RegisterDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
@@ -194,24 +164,24 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "RookieRisePortalPanal.Controllers.WeatherForecastController",
-    "Method": "Get",
-    "RelativePath": "WeatherForecast",
-    "HttpMethod": "GET",
+    "ContainingType": "RookieRisePortalPanal.Controllers.CompanyController",
+    "Method": "UploadLogo",
+    "RelativePath": "api/Company/upload-logo",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
+    "Parameters": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[RookieRisePortalPanal.WeatherForecast, RookieRisePortalPanal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
+        "Name": "CompanyId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Logo",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
       }
     ],
-    "EndpointName": "GetWeatherForecast"
+    "ReturnTypes": []
   }
 ]

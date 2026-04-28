@@ -4890,11 +4890,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LOL\\source\\repos\\RookieRisePortalPanal\\RookieRisePortalPanal.Data\\RookieRisePortalPanal.Data.csproj",
+      "projectUniqueName": "C:\\Users\\LOL\\Desktop\\repos\\Test3\\RookieRisePortalPanal\\RookieRisePortalPanal.Data\\RookieRisePortalPanal.Data.csproj",
       "projectName": "RookieRisePortalPanal.Data",
-      "projectPath": "C:\\Users\\LOL\\source\\repos\\RookieRisePortalPanal\\RookieRisePortalPanal.Data\\RookieRisePortalPanal.Data.csproj",
+      "projectPath": "C:\\Users\\LOL\\Desktop\\repos\\Test3\\RookieRisePortalPanal\\RookieRisePortalPanal.Data\\RookieRisePortalPanal.Data.csproj",
       "packagesPath": "C:\\Users\\LOL\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LOL\\source\\repos\\RookieRisePortalPanal\\RookieRisePortalPanal.Data\\obj\\",
+      "outputPath": "C:\\Users\\LOL\\Desktop\\repos\\Test3\\RookieRisePortalPanal\\RookieRisePortalPanal.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

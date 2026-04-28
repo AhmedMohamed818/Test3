@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
-
+﻿
 namespace RookieRisePortalPanal.Data.Entities
 {
     public class Company : ITrackableEntity
@@ -10,7 +9,7 @@ namespace RookieRisePortalPanal.Data.Entities
         public string WebsiteUrl { get; set; }
         public string? LogoPath { get; set; }
 
-        //  Navigation (One Company → One Users)
+        
         public Guid UserId { get; set; }
         public AppUser User { get; set; } = null!;
 
@@ -25,7 +24,7 @@ namespace RookieRisePortalPanal.Data.Entities
         public Guid? UpdatedBy { get; set; }
 
 
-        public bool IsDeleted { get; set; } = false; // soft delete
+        public bool IsDeleted { get; set; } = false; 
         public DateTime? DeletedAt { get; set; }
         public Guid? DeletedBy { get; set; }
     }

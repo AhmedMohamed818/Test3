@@ -2,7 +2,6 @@
 using Microsoft.IdentityModel.Tokens;
 using RookieRisePortalPanal.Data.Entities;
 using RookieRisePortalPanal.Services.AppConfigration;
-using RookieRisePortalPanal.Services.AppConfigration.RookieRisePortalPanal.Services.AppConfigration;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;

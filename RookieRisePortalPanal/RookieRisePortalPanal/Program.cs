@@ -12,11 +12,10 @@ using RookieRisePortalPanal.Repositories.TokenRepository;
 using RookieRisePortalPanal.Repositories.UsersRepository;
 using RookieRisePortalPanal.Services.AccountService;
 using RookieRisePortalPanal.Services.AppConfigration;
-using RookieRisePortalPanal.Services.AppConfigration.RookieRisePortalPanal.Services.AppConfigration;
+using RookieRisePortalPanal.Services.CompaniesServices.DTO;
 using RookieRisePortalPanal.Services.CompanyService;
 using RookieRisePortalPanal.Services.EmailService;
 using RookieRisePortalPanal.Services.JwtService;
-using RookieRisePortalPanal.Services.MappingProfile;
 using System.Text;
 
 namespace RookieRisePortalPanal
@@ -139,7 +138,7 @@ namespace RookieRisePortalPanal
                 .AddSupportedCultures("en-US", "ar-EG")
                 .AddSupportedUICultures("en-US", "ar-EG"));
 
-            // ✅ هنا بقى الميدلوير الجديد
+            
             app.UseMiddleware<GlobalExceptionMiddleware>();
 
             if (app.Environment.IsDevelopment())

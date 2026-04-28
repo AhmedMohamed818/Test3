@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using RookieRisePortalPanal.Services.CompaniesServices.DTO;
 using RookieRisePortalPanal.Services.CompanyService;
 using RookieRisePortalPanal.Services.CompanyService.DTO;
 
@@ -7,20 +8,14 @@ namespace RookieRisePortalPanal.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class CompanyController : ControllerBase
+    public class CompanyController (ICompanyService companyService) : ControllerBase
     {
-        private readonly ICompanyService _companyService;
-
-        public CompanyController(ICompanyService companyService)
-        {
-            _companyService = companyService;
-        }
-
-        // 📋 GET ALL
+       
+        
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var result = await _companyService.GetAllAsync();
+            var result = await companyService.GetAllAsync();
 
             return Ok(new
             {
@@ -29,11 +24,11 @@ namespace RookieRisePortalPanal.Controllers
             });
         }
 
-        // 🔍 GET BY ID
+        
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(Guid id)
         {
-            var result = await _companyService.GetByIdAsync(id);
+            var result = await companyService.GetByIdAsync(id);
 
             return Ok(new
             {
@@ -41,12 +36,24 @@ namespace RookieRisePortalPanal.Controllers
                 data = result
             });
         }
+       
+        [Authorize]
+        [HttpPost("upload-logo")]
+        public async Task<IActionResult> UploadLogo([FromForm] UploadLogoDto dto)
+        {
+            var logoName = await companyService.UploadLogoAsync(dto);
+            return Ok(new
+            {
+                success = true,
+                message = "Logo uploaded successfully",
+                data = logoName
+            });
+        }
 
-        // ➕ CREATE
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateCompanyDto dto)
         {
-            var result = await _companyService.CreateAsync(dto);
+            var result = await companyService.CreateAsync(dto);
 
             return Ok(new
             {
@@ -56,11 +63,11 @@ namespace RookieRisePortalPanal.Controllers
             });
         }
 
-        // ✏️ UPDATE
+       
         [HttpPut]
         public async Task<IActionResult> Update([FromBody] UpdateCompanyDto dto)
         {
-            await _companyService.UpdateAsync(dto);
+            await companyService.UpdateAsync(dto);
 
             return Ok(new
             {
@@ -69,11 +76,11 @@ namespace RookieRisePortalPanal.Controllers
             });
         }
 
-        // ❌ DELETE
+      
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id)
         {
-            await _companyService.DeleteAsync(id);
+            await companyService.DeleteAsync(id);
 
             return Ok(new
             {
@@ -82,11 +89,11 @@ namespace RookieRisePortalPanal.Controllers
             });
         }
 
-        // ♻️ RESTORE
+        
         [HttpPost("{id}/restore")]
         public async Task<IActionResult> Restore(Guid id)
         {
-            await _companyService.RestoreAsync(id);
+            await companyService.RestoreAsync(id);
 
             return Ok(new
             {

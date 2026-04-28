@@ -20,74 +20,55 @@ namespace RookieRisePortalPanal.Data.Context
         public DbSet<Company> Companies { get; set; }
         public DbSet<UserToken> AppUserTokens { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            base.OnModelCreating(builder);
 
-            // =========================
-            // AppUser
-            // =========================
-            builder.Entity<AppUser>(entity =>
+
+        protected override void OnModelCreating(ModelBuilder modelbuilder)
+        {
+
+            base.OnModelCreating(modelbuilder);
+            modelbuilder.Entity<AppUser>(entity =>
             {
                 entity.HasQueryFilter(x => !x.IsDeleted);
             });
 
-            // =========================
-            // Company
-            // =========================
-            builder.Entity<Company>(entity =>
+            modelbuilder.Entity<AppUser>()
+            .HasIndex(u => u.NormalizedEmail)
+            .HasFilter("[IsDeleted] = 0") 
+            .IsUnique();
+
+            modelbuilder.Entity<AppUser>()
+                .HasIndex(u => u.NormalizedUserName)
+                .HasFilter("[IsDeleted] = 0")
+                .IsUnique();
+
+
+            modelbuilder.Entity<Company>(entity =>
             {
-                entity.HasKey(c => c.Id);
-
-                entity.Property(c => c.NameEn)
-                      .IsRequired()
-                      .HasMaxLength(200);
-
-                entity.Property(c => c.NameAr)
-                      .IsRequired()
-                      .HasMaxLength(200);
-
-                entity.Property(c => c.WebsiteUrl)
-                      .HasMaxLength(500);
-
-                entity.Property(c => c.LogoPath)
-                      .HasMaxLength(500);
-
-                // One-to-One (Company ↔ User)
+                
                 entity.HasOne(c => c.User)
-                      .WithOne(u => u.Company)
+                       .WithOne()
                       .HasForeignKey<Company>(c => c.UserId)
                       .OnDelete(DeleteBehavior.Restrict);
 
                 entity.HasQueryFilter(x => !x.IsDeleted);
             });
 
-            // =========================
-            // UserToken
-            // =========================
-            builder.Entity<UserToken>(entity =>
+
+
+            modelbuilder.Entity<UserToken>(entity =>
             {
-                entity.HasKey(t => t.Id);
-
-                entity.Property(t => t.Token)
-                      .IsRequired()
-                      .HasMaxLength(500);
-
-                entity.Property(t => t.Type)
-                      .IsRequired();
-
-                entity.Property(t => t.ExpirationTime)
-                      .IsRequired();
-
-                entity.Property(t => t.IsUsed)
-                      .HasDefaultValue(false);
-
-                // Relation with AppUser (Many Tokens → One User)
-                entity.HasOne<AppUser>()
+                
+                entity.HasOne<AppUser>(t => t.User)
                       .WithMany()
                       .HasForeignKey(t => t.UserId)
                       .OnDelete(DeleteBehavior.Cascade);
             });
+            
+
+
+
+
+
         }
     }
 }

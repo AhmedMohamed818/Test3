@@ -11,8 +11,6 @@ namespace RookieRisePortalPanal.Data.Entities
     public class AppUser : IdentityUser<Guid>, ITrackableEntity
     {
 
-        public Company? Company { get; set; }
-        // tracking imp
         public DateTime CreatedAt { get; set; }
         public Guid? CreatedBy { get; set; }
 
@@ -21,7 +19,7 @@ namespace RookieRisePortalPanal.Data.Entities
         public Guid? UpdatedBy { get; set; }
 
 
-        public bool IsDeleted { get; set; } = false; // soft delete
+        public bool IsDeleted { get; set; } = false; 
         public DateTime? DeletedAt { get; set; }
         public Guid? DeletedBy { get; set; }
     }

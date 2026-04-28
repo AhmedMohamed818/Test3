@@ -12,7 +12,7 @@ namespace RookieRisePortalPanal.Controllers
     {
 
 
-        // 🔐 LOGIN
+        
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginDto loginDto)
         {
@@ -25,9 +25,9 @@ namespace RookieRisePortalPanal.Controllers
             });
         }
 
-        // 📝 REGISTER
+        
         [HttpPost("register")]
-        public async Task<IActionResult> Register([FromForm] RegisterDto registerDto)
+        public async Task<IActionResult> Register([FromBody] RegisterDto registerDto)
         {
             var result = await accountService.RegisterAsync(registerDto);
 
@@ -39,7 +39,7 @@ namespace RookieRisePortalPanal.Controllers
             });
         }
 
-        // 🔑 SET PASSWORD
+     
         [HttpPost("setpassword")]
         public async Task<IActionResult> SetPassword([FromBody] SetPasswordDto dto)
         {
@@ -52,7 +52,7 @@ namespace RookieRisePortalPanal.Controllers
             });
         }
 
-        // 📧 CHECK EMAIL EXISTS
+        
         [HttpGet("email-exists")]
         public async Task<IActionResult> CheckEmailExists([FromQuery] string email)
         {
@@ -65,7 +65,7 @@ namespace RookieRisePortalPanal.Controllers
             });
         }
 
-        // 👤 CURRENT USER
+        
         [Authorize]
         [HttpGet("current-user")]
         public async Task<IActionResult> GetCurrentUser()

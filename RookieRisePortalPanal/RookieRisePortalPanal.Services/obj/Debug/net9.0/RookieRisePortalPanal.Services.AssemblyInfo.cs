@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RookieRisePortalPanal.Services")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+43a390985aa1b040e9a31ee8e0be833edbfcd6fd")]
 [assembly: System.Reflection.AssemblyProductAttribute("RookieRisePortalPanal.Services")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RookieRisePortalPanal.Services")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

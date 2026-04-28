@@ -6,8 +6,6 @@ using System.Threading.Tasks;
 
 namespace RookieRisePortalPanal.Services.AppConfigration
 {
-    namespace RookieRisePortalPanal.Services.AppConfigration
-    {
         public class JwtSettings
         {
             public string SecretKey { get; set; }
@@ -15,6 +13,6 @@ namespace RookieRisePortalPanal.Services.AppConfigration
             public string Audience { get; set; }
             public double DurationInDays { get; set; }
         }
-    }
-    
 }
+    
+
